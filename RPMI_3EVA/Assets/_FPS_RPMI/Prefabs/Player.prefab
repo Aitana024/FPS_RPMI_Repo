@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 1448453948794380899}
   - component: {fileID: 7844603835034283334}
   - component: {fileID: 7560521183554759440}
+  - component: {fileID: 368598459736926012}
   - component: {fileID: 525103399755747312}
   - component: {fileID: 8134163387958573543}
   - component: {fileID: 3370778939416682023}
@@ -119,6 +120,35 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!114 &368598459736926012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842324198726485334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a38f51243c0c164cbed647a40960d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GunSystem
+  fpsCam: {fileID: 8215032314985896635}
+  shootPoint: {fileID: 0}
+  impactLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  damage: 10
+  range: 100
+  spread: 0
+  shootingCooldown: 0.2
+  reloadTime: 1.5
+  allowButtonHold: 0
+  ammoSize: 30
+  bulletsPerTap: 1
+  impactEffects: {fileID: 0}
+  shooting: 0
+  canShoot: 0
+  reloading: 0
 --- !u!114 &525103399755747312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +223,19 @@ MonoBehaviour:
     m_ActionId: bb694821-1c04-4e92-83b0-e29669c59bfd
     m_ActionName: 'Gameplay/Jump[/Keyboard/space]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 368598459736926012}
+        m_TargetAssemblyTypeName: GunSystem, Assembly-CSharp
+        m_MethodName: onShoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 58a325e7-fa9a-4464-b32b-2a10bf48263e
     m_ActionName: 'Gameplay/Shoot[/Mouse/leftButton]'
   - m_PersistentCalls:
@@ -229,7 +271,19 @@ MonoBehaviour:
     m_ActionId: 7701e4dd-ea05-4daa-a20a-1930a59f82c1
     m_ActionName: 'Gameplay/Sprint[/Keyboard/shift]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 368598459736926012}
+        m_TargetAssemblyTypeName: GunSystem, Assembly-CSharp
+        m_MethodName: onReload
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 1f996f70-fb55-449c-b873-50e2f7324e86
     m_ActionName: 'Gameplay/Reload[/Keyboard/r]'
   m_NeverAutoSwitchControlSchemes: 0
